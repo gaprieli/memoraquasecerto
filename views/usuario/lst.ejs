@@ -1,0 +1,36 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Usuario</h1>
+    <div>
+        <form action="
+        " method="post">
+        <input type="text" name="filtro"
+         id="" placeholder="digite o nome">
+         <button type="submit">Pesquisar</button>
+    </form>
+    </div>
+    <a href="/usuario/add">Adicionar usuário</a>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Email</td>
+            <td>Senha</td>
+            <td>Bio</td>
+            <td>Data de Nascimento</td>
+            <td>Foto de Perfil</td>
+            <td>Ações</td>
+        </tr>
+
+        <%for (const {id, nome, email, senha, bio, dataNascimento, fotoPerfil} of Usuarios) {%>
+        <tr>
+            <td><%=nome%></td>
+            <td><%=email%></td>
+            <td><%=senha%></td>
+            <td><%=bio%></td>
+            <td><%=dataNascimento.toISOString().split('T')[0]%></td>
+            <td><img src="<%=fotoPerfil%>" width="150" height="150"></td>
+            <td><a href="/usuario/edt/<%=id%>">Editar</a>
+            <a href="/usuario/del/<%=id%>">Excluir</a></td>
+        </tr>
+        <%}%>
+    </table>
+ <%-include('../rodape.ejs')%>

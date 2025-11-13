@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --verde-escuro: #2f5233;
+  --verde-medio: #6a994e;
+  --verde-claro: #a7d1ab;
+  --verde-fundo: #dcefe1;
+  --verde-agua: #9fd8b3;
+  --branco: #ffffff;
+  --sombra: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(180deg, var(--verde-fundo), #cbe4ce);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--verde-escuro);
+}
+
+/* Container principal */
+.container {
+  background-color: var(--branco);
+  padding: 50px;
+  border-radius: 18px;
+  box-shadow: 0 6px 25px var(--sombra);
+  width: 90%;
+  max-width: 1300px; 
+  margin: 40px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px var(--sombra);
+}
+
+/* Títulos */
+h1 {
+  text-align: center;
+  color: var(--verde-escuro);
+  margin-bottom: 25px;
+  font-size: 2.2em;
+  letter-spacing: 1px;
+}
+
+/* Parágrafos */
+.container p {
+  text-align: center;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Menu */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu ul li a {
+  padding: 10px 16px;
+  background: var(--verde-agua);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--verde-escuro);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.menu ul li a:hover {
+  background: var(--verde-medio);
+  color: var(--branco);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  background-color: var(--verde-medio);
+  color: var(--branco);
+}
+
+.btn.edit {
+  background-color: #55c59d;
+  color: #1b3a28;
+}
+
+.btn.add {
+  background-color: #2f7848;
+  color: var(--branco);
+}
+
+.btn.delete {
+  background-color: #20523a;
+  color: var(--branco);
+}
+
+.btn.cancelar {
+  background-color: #163c2a;
+  color: var(--branco);
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Formulário */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--verde-escuro);
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--verde-claro);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: var(--verde-medio);
+  box-shadow: 0 0 5px var(--verde-claro);
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+table th, table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--verde-claro);
+}
+
+table th {
+  background: linear-gradient(90deg, var(--verde-medio), #88c97a);
+  color: var(--branco);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f6fbf7;
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+table tr:hover {
+  background-color: #e0f3e3;
+  transition: background-color 0.3s ease;
+}
+
+/* Links dentro da tabela */
+table a {
+  color: var(--verde-medio);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+table a:hover {
+  color: var(--verde-escuro);
+  text-decoration: underline;
+}
+
+/* Campo de busca */
+.search {
+  text-align: right;
+}
+
+.search input {
+  border: 1px solid var(--verde-claro);
+  border-radius: 6px;
+  padding: 6px 10px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search input:focus {
+  border-color: var(--verde-medio);
+}
+
+/* Rodapé */
+.footer {
+  margin-top: auto;
+  padding: 25px;
+  text-align: center;
+  color: var(--verde-escuro);
+  font-size: 0.9rem;
+  background: #e3f2e6;
+  border-top: 2px solid var(--verde-claro);
+}
+.footer p {
+  margin: 5px 0;
+}
+
+/* ===== BOTÃO DE CADASTRO (compacto, verde sólido e espaçado) ===== */
+button, 
+input[type="submit"], 
+input[type="button"] {
+  background-color: var(--verde-medio);
+  color: var(--branco);
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease;
+  margin-top: 10px; /* espaçamento acima do botão */
+}
+
+button:hover, 
+input[type="submit"]:hover, 
+input[type="button"]:hover {
+  background-color: var(--verde-escuro);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:active, 
+input[type="submit"]:active, 
+input[type="button"]:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== LINKS (removendo cor verde ao clicar e padronizando estilo) ===== */
+a {
+  color: var(--verde-medio);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--verde-escuro);
+  text-decoration: underline;
+}
+
+a:visited,
+a:focus,
+a:active {
+  color: var(--verde-medio); /* mantém a mesma cor */
+  outline: none; /* remove o contorno padrão */
+  text-decoration: none;
+}

@@ -1,0 +1,23 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Lugar</h1>
+    <a href="/lugar/add">Adicionar lugar</a>
+    <table>
+        <tr>
+            <td>Nome</td>
+           <td>Descrição</td>
+            <td>Localização</td>
+            <td>Ações</td>
+        </tr>
+        <%for (const {id, nome, descricao, localizacao} of Lugares) {%>
+        <tr>
+            <td><%=nome%></td>
+            <td><%=descricao%></td>
+            <td><%=localizacao%></td>
+            <td>
+                <a href="/lugar/edt/<%=id%>">Editar</a> <!-- Rota corrigida -->
+                <a href="/lugar/del/<%=id%>">Excluir</a> <!-- Rota corrigida -->
+            </td>
+        </tr>
+        <%}%>
+    </table>
+<%-include('../rodape.ejs')%>
