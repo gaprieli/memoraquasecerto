@@ -35,11 +35,12 @@ export default class EmpresaController{
 
         this.edt = async(req, res)=>{
             const id = req.params.id;
-            await Empresa.findByIdAndUpdate(id, {
+            await Empresa.findByIdAndUpdate(req.body.id, {
                 nome: req.body.nome,
-                nivel: req.body.nivel,
-                area: req.body.area,
-                anofundacao: req.body.ano
+                cnpj: req.body.cnpj,
+                email: req.body.email,
+                telefone: req.body.telefone,
+                endereco: req.body.endereco
             });
             res.redirect('/' + this.caminhoBase + 'lst');
         }
