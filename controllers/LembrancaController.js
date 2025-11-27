@@ -35,13 +35,13 @@ export default class LembrancaController{
         }
 
         this.list = async(req, res)=>{
-            const resultado = await Lembranca.find({})
+            const resultado = await Lembranca.find({}).populate('usuario').populate('empresa').populate('lugar');
             res.render(caminhoBase + 'lst', {lembrancas:resultado}) // Consider adding .sort({ data: -1 }) or similar
         }
         this.find = async(req, res)=>{
             const filtro = req.body.filtro;
             // Changed 'nome' to 'titulo' and ensured consistent variable name 'lembrancas'
-            const resultado = await Lembranca.find({ titulo: { $regex: filtro, $options: "i" }})
+            const resultado = await Lembranca.find({ titulo: { $regex: filtro, $options: "i" }}).populate('usuario').populate('empresa').populate('lugar');
             // Consider adding .sort({ data: -1 }) or similar for consistent ordering
             res.render(caminhoBase + 'lst', {lembrancas:resultado})
         }

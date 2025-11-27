@@ -10,6 +10,12 @@
   --sombra: rgba(0, 0, 0, 0.1);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(180deg, var(--verde-fundo), #cbe4ce);
@@ -21,7 +27,6 @@ body {
   color: var(--verde-escuro);
 }
 
-/* Container principal */
 .container {
   background-color: var(--branco);
   padding: 50px;
@@ -38,7 +43,6 @@ body {
   box-shadow: 0 10px 30px var(--sombra);
 }
 
-/* Títulos */
 h1 {
   text-align: center;
   color: var(--verde-escuro);
@@ -47,7 +51,6 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* Parágrafos */
 .container p {
   text-align: center;
   line-height: 1.6;
@@ -55,7 +58,6 @@ h1 {
   font-size: 1rem;
 }
 
-/* Menu */
 .menu ul {
   list-style: none;
   padding: 0;
@@ -82,7 +84,6 @@ h1 {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Botões */
 .btn {
   display: inline-block;
   padding: 10px 16px;
@@ -91,6 +92,8 @@ h1 {
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
 }
 
 .btn {
@@ -123,7 +126,6 @@ h1 {
   transform: translateY(-2px);
 }
 
-/* Formulário */
 .form-group {
   margin-bottom: 15px;
 }
@@ -149,7 +151,6 @@ h1 {
   box-shadow: 0 0 5px var(--verde-claro);
 }
 
-/* Tabela */
 table {
   width: 100%;
   border-collapse: separate;
@@ -187,7 +188,6 @@ table tr:hover {
   transition: background-color 0.3s ease;
 }
 
-/* Links dentro da tabela */
 table a {
   color: var(--verde-medio);
   text-decoration: none;
@@ -199,7 +199,6 @@ table a:hover {
   text-decoration: underline;
 }
 
-/* Campo de busca */
 .search {
   text-align: right;
 }
@@ -216,7 +215,6 @@ table a:hover {
   border-color: var(--verde-medio);
 }
 
-/* Rodapé */
 .footer {
   margin-top: auto;
   padding: 25px;
@@ -226,44 +224,58 @@ table a:hover {
   background: #e3f2e6;
   border-top: 2px solid var(--verde-claro);
 }
+
 .footer p {
   margin: 5px 0;
 }
 
-/* ===== BOTÃO DE CADASTRO (compacto, verde sólido e espaçado) ===== */
-button, 
-input[type="submit"], 
-input[type="button"] {
-  background-color: var(--verde-medio);
+table .btn {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  margin: 2px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+table .btn.edit {
+  background-color: #55c59d;
+  color: #1b3a28;
+}
+
+table .btn.delete {
+  background-color: #20523a;
   color: var(--branco);
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 14px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  letter-spacing: 0.3px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-  transition: all 0.25s ease;
-  margin-top: 10px; /* espaçamento acima do botão */
 }
 
-button:hover, 
-input[type="submit"]:hover, 
-input[type="button"]:hover {
-  background-color: var(--verde-escuro);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+table td:last-child {
+  text-align: center;
 }
 
-button:active, 
-input[type="submit"]:active, 
-input[type="button"]:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+table td {
+  vertical-align: middle;
+  padding: 12px 15px;
 }
 
-/* ===== LINKS (removendo cor verde ao clicar e padronizando estilo) ===== */
+.estrelas {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+table button,
+table .btn {
+  margin-top: 0;
+}
+
+.lembrancas-container .btn {
+  margin-top: 0;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+.lembrancas-container table .btn {
+  min-width: 60px;
+}
+
 a {
   color: var(--verde-medio);
   text-decoration: none;
@@ -279,7 +291,7 @@ a:hover {
 a:visited,
 a:focus,
 a:active {
-  color: var(--verde-medio); /* mantém a mesma cor */
-  outline: none; /* remove o contorno padrão */
+  color: var(--verde-medio);
+  outline: none;
   text-decoration: none;
 }
